@@ -9,20 +9,17 @@ public abstract class Tweet implements Tweetable{
 
     public Tweet(String message){
         this.message = message;
-
-
     }
 
     public Tweet(String message, Date date){
         this.message = message;
         this.date = date;
-
     }
 //    getters and setters. retrive and get data
 
-    public class getDate() {
-        return date;
-    }
+//    public Date getDate() {
+//        return date;
+//    }
 
     public void setDate(Date date){
         this.date = date;
@@ -43,5 +40,12 @@ public abstract class Tweet implements Tweetable{
 
     }
     public abstract Boolean isImportant();
+    public Date getDate(){
+        return date;
+    }
+//    public String getMessage(){
+//        return message;
+//    }
+
 
 }
