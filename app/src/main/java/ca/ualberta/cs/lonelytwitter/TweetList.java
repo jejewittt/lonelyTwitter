@@ -24,4 +24,11 @@ public class TweetList {
         tweets.remove(tweet);
     }
 
+    public ArrayList<Tweet> getTweets(){
+        return tweets;
+    }
+    public int getCount(){
+        return tweets.size();
+    }
+
 }

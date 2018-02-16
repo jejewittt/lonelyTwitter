@@ -2,6 +2,8 @@ package ca.ualberta.cs.lonelytwitter;
 
 import android.test.ActivityInstrumentationTestCase2;
 
+import java.util.ArrayList;
+
 /**
  * Created by james on 2018-02-15.
  */
@@ -13,7 +15,7 @@ public class TweetListTest extends ActivityInstrumentationTestCase2 {
     }
 
     public void testAddTweet(){
-        assertTrue(Boolean.FALSE);
+//        assertTrue(Boolean.FALSE);
         TweetList tweets = new TweetList();
 
         Tweet tweet = new NormalTweet("adding a normal teweet");
@@ -47,6 +49,41 @@ public class TweetListTest extends ActivityInstrumentationTestCase2 {
         tweets.delete(tweet);
         assertFalse(tweets.hasTweet(tweet));
 
+    }
+
+    public void addTweet(){
+        TweetList tweets = new TweetList();
+        Tweet tweet = new NormalTweet("adding a normal teweet");
+        tweets.add(tweet);
+        assertFalse( tweets.hasTweet(tweet));
+    }
+
+    public void testGetListTweet(){
+        TweetList tweets = new TweetList();
+        Tweet tweet = new NormalTweet("adding a normal teweet");
+        Tweet tweet2 = new NormalTweet("adding another normal tweet");
+        tweets.add(tweet);
+        tweets.add(tweet2);
+        ArrayList<Tweet> tweetsgotten = tweets.getTweets();
+    }
+
+    public void hasTweetTest(){
+        TweetList tweets = new TweetList();
+        Tweet tweet = new NormalTweet("adding a normal teweet");
+        Tweet tweet2 = new NormalTweet("adding a normal teweet");
+        tweets.add(tweet);
+        tweets.add(tweet2);
+
+       assertEquals(tweets.getTweet(0),tweets.getTweet(1));
+
+    }
+    public void testGetCount(){
+        TweetList tweets = new TweetList();
+        Tweet tweet = new NormalTweet("adding a normal teweet");
+        Tweet tweet2 = new NormalTweet("adding a normal tweet");
+        tweets.add(tweet);
+        tweets.add(tweet2);
+        tweets.getCount();
     }
 
 }
