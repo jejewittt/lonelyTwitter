@@ -1,0 +1,33 @@
+compile 'com.jayway.android.robotium:robotium-solo:5.6.3'
+private solo solo;
+
+
+import com.robotium.solo.solo;
+
+public void setup throws exception(){
+	Solo solo =  new Solo(getistrumentation(), getActivity());
+}
+
+@Override
+pulic void tearDown() throws Exception{
+	solo.finishedOpenedAvitivites();
+}
+
+public void testTweet(){
+
+	solo.assertCurrentAvitivty('Wrong avtiviy", LonleyTwitterAvitivty.class);
+	solo.enterText((EditText) solo.getView(R.id.body), "test Tweet");
+	solo.ClickOnButton("save");
+	solo.ClearEditText((EdotText) solo.getView(R.id.body));
+	assertTrue(solo.watiForTest("testTweet"));
+	solo.ClickOnButton("Clear");
+	assertFalse(solo.waitforTet("test Tweet!"));
+}
+
+
+
+---------------- in lonley twitter
+
+
+
+(copy savebutton and change the name to implement the clear button
